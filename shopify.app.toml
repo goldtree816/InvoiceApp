@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "5c6a812b753376daf9bb98c26dc4827d"
+name = "gold-tree"
+handle = "gold-tree-1"
+application_url = "https://being-paying-spirituality-roughly.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = ["https://being-paying-spirituality-roughly.trycloudflare.com/auth/callback", "https://being-paying-spirituality-roughly.trycloudflare.com/auth/shopify/callback", "https://being-paying-spirituality-roughly.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false
